@@ -1,0 +1,38 @@
+{
+  "HELLO": {
+    "label": "Hello",
+    "motion_id": "HELLO"
+  },
+  "THANK_YOU": {
+    "label": "Thank you",
+    "motion_id": "THANK_YOU"
+  },
+  "PLEASE": {
+    "label": "Please",
+    "motion_id": "PLEASE"
+  },
+  "YES": {
+    "label": "Yes",
+    "motion_id": "YES"
+  },
+  "NO": {
+    "label": "No",
+    "motion_id": "NO"
+  },
+  "HELP": {
+    "label": "Help",
+    "motion_id": "HELP"
+  },
+  "HOW": {
+    "label": "How",
+    "motion_id": "HOW"
+  },
+  "YOU": {
+    "label": "You",
+    "motion_id": "YOU"
+  },
+  "FINE": {
+    "label": "Fine",
+    "motion_id": "FINE"
+  }
+}

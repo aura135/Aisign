@@ -1,0 +1,133 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #152238;
+}
+.topbar {
+  background: #12233f;
+  color: white;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.topbar h1 { margin: 0 0 5px; }
+.topbar p { margin: 0; opacity: .85; }
+.status {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #ffffff22;
+  font-size: 13px;
+}
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 25px #10204012;
+}
+h2 { margin-top: 0; }
+.muted { color: #65738a; }
+.camera-wrap {
+  background: #0c1220;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 300px;
+  position: relative;
+}
+#camera {
+  width: 100%;
+  display: block;
+  max-height: 560px;
+  object-fit: cover;
+}
+.camera-overlay {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  background: #000a;
+  color: white;
+  border-radius: 8px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #1769e0;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+button.secondary { background: #e8edf5; color: #152238; }
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #ccd5e2;
+  border-radius: 12px;
+  padding: 14px;
+  font: inherit;
+}
+.prediction {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f7f9fc;
+}
+.label {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 11px;
+  color: #718096;
+  font-weight: bold;
+}
+.big {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.notice {
+  margin-top: 10px;
+  color: #59677d;
+}
+.warning {
+  background: #fff4d8;
+  border-left: 4px solid #e0a100;
+  padding: 13px;
+  margin-top: 18px;
+  border-radius: 8px;
+}
+.avatar-panel {
+  display: grid;
+  grid-template-columns: minmax(300px, 520px) 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 20px;
+}
+#avatar {
+  width: 100%;
+  max-width: 520px;
+  background: #eef4ff;
+  border-radius: 18px;
+}
+.sequence {
+  font-weight: bold;
+  line-height: 1.8;
+}
+@media (max-width: 750px) {
+  .avatar-panel { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; align-items: flex-start; }
+}

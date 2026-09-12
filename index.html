@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SignBridge AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>SignBridge AI</h1>
+      <p>Two-way Indian Sign Language communication</p>
+    </div>
+    <span id="apiStatus" class="status">Checking backend…</span>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>ISL → Text → Voice</h2>
+      <p class="muted">Allow camera access. Frames are sent to the configured recognition model.</p>
+
+      <div class="camera-wrap">
+        <video id="camera" autoplay muted playsinline></video>
+        <div id="cameraOverlay" class="camera-overlay">Camera stopped</div>
+      </div>
+
+      <div class="row">
+        <button id="startCamera">Start camera</button>
+        <button id="stopCamera" class="secondary">Stop camera</button>
+        <button id="speakPrediction" class="secondary">Speak result</button>
+      </div>
+
+      <div class="prediction">
+        <div class="label">Recognized text</div>
+        <div id="predictionText" class="big">—</div>
+        <div id="predictionConfidence" class="muted">Confidence: —</div>
+        <div id="predictionMessage" class="notice">No model prediction yet.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Text → ISL animated signer</h2>
+      <p class="muted">The other user can type a message. The backend converts it to a sign sequence and the avatar performs the mapped motions.</p>
+
+      <textarea id="textInput" rows="4" placeholder="Type a message, for example: Hello, thank you"></textarea>
+
+      <div class="row">
+        <button id="convertText">Convert to ISL</button>
+        <button id="speakText" class="secondary">Speak typed text</button>
+      </div>
+
+      <div class="avatar-panel">
+        <canvas id="avatar" width="520" height="520"></canvas>
+        <div>
+          <div class="label">Sign sequence</div>
+          <div id="signSequence" class="sequence">—</div>
+          <div id="signStatus" class="notice">Waiting for text.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How this connects to the real model</h2>
+      <ol>
+        <li>Browser gets the real camera stream.</li>
+        <li>Browser captures JPEG frames.</li>
+        <li>Backend sends each frame to your ISL recognition model/API.</li>
+        <li>The model returns a sign label and confidence.</li>
+        <li>Text is shown and can be spoken.</li>
+        <li>For reverse communication, text is converted into a sign sequence and played by the avatar.</li>
+      </ol>
+      <div class="warning">
+        This package does not pretend that a label list is a trained 200-sign recognizer. Connect the actual trained ISL model through MODEL_API_URL.
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="avatar.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
